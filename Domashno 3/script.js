@@ -12,6 +12,7 @@ function reload(){
       <div class="card">
         <h2> Cat id: ${cat.id}</h2>
         <p> Cat width: ${cat.width}</p>
+        <p> Cat height: ${cat.height}</p>
         <a href="${cat.url}" onclick="reload()" target="_blank" >${cat.url}</a>
       </div>
       `;    
