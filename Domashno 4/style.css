@@ -1,0 +1,13 @@
+#search{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(197, 193, 193);
+    border: 1px solid gray;
+    gap: 2px;
+}
+.input{
+    margin-top: 10px;
+}
+.element{
+    border: 1px solid gray;
+}
