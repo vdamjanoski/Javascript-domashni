@@ -1,13 +1,18 @@
 #search{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(197, 193, 193);
-    border: 1px solid gray;
-    gap: 2px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    width: 100%;
+    border-radius: 30px;
+    gap: 10px;
 }
 .input{
     margin-top: 10px;
 }
-.element{
-    border: 1px solid gray;
+.element {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px;
+    background-color: rgb(211, 208, 208);
 }
