@@ -15,28 +15,53 @@ function validateForm() {
     nameInputError.innerText = "Name must be longer than 6 letters";
     return false;
   }
-
-
-  nameInputError.innerText = ""
+  nameInputError.innerText = "";
   return true;
 }
-const emptyInput1=document.getElementById("emptyInput1")
-const emptyInput2=document.getElementById("emptyInput2")
-const emptyInput3=document.getElementById("emptyInput3")
-function isEmpty(){
-  if (password.value=="" || lastnameInput.value=="" || emailInput.value==""){
-    emptyInput1.innerText="This field is empty!"
-    emptyInput2.innerText="This field is empty!"
-    emptyInput3.innerText="This field is empty!"
-    return false;
-  }else{
-    emptyInput1.innerText=""
-    emptyInput2.innerText=""
-    emptyInput3.innerText=""
-    return true;
+const emptyInput1=document.getElementById("passwordInputError")
+const emptyInput2=document.getElementById("lastnameInputError")
+const emptyInput3=document.getElementById("emailInputError")
+ 
+  function checkPassword(){
+    if (password.value==""){
+      emptyInput1.innerText="This field is empty!"
+      return false;
+    }else{
+      emptyInput1.innerText=""
+      return true;
+    }
   }
+  function checkLastName(){
+    if (lastnameInput.value==""){
+      emptyInput2.innerText="This field is empty!"
+      return false;
+    }else{
+      emptyInput2.innerText=""
+      return true;
+    }
+  }
+  function checkEmail(){
+    if (emailInput.value==""){
+      emptyInput3.innerText="This field is empty!"
+      return false;
+      
+    }else{
+      emptyInput3.innerText=""
+      return true;
+    }
+  }
+  // if ((password.value=="") && (lastnameInput.value=="") && (emailInput.value=="")){
+  //   emptyInput1.innerText="This field is empty!"
+  //   emptyInput2.innerText="This field is empty!"
+  //   emptyInput3.innerText="This field is empty!"
+  //   return false;
+  // } else {
+  //   emptyInput1.innerText=""
+  //   emptyInput2.innerText=""
+  //   emptyInput3.innerText=""
+  //   return true;
+  // }
 
-}
 
 function isAdult(){
     if (age.value < 18){
@@ -49,8 +74,7 @@ function isAdult(){
 }
 function addStudent() {
   
-  if (validateForm() && isAdult()) {
-    if(isEmpty()){
+  if (validateForm()  && checkLastName() && checkEmail( )  && checkPassword() && isAdult()) {
       const row = studentTable.insertRow();
       const nameCell = row.insertCell();
       const lastnameCell = row.insertCell();
@@ -64,6 +88,7 @@ function addStudent() {
     emailCell.innerText = emailInput.value;
     passwordCell.innerText = password.value;
     ageCell.innerText = age.value;
+    
   
 
 
@@ -77,4 +102,4 @@ function addStudent() {
       row.remove();
     });
     actionsCell.appendChild(deleteBtn);
-  }}}
+  }}
