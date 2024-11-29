@@ -7,7 +7,6 @@ const emailInput = document.getElementById("emailInput");
 const ageInputError = document.getElementById("ageIsAdult");
 
 
-
 const studentTable = document.getElementById("studentTable");
 
 
@@ -52,32 +51,30 @@ function addStudent() {
   
   if (validateForm() && isAdult()) {
     if(isEmpty()){
-    const row = studentTable.insertRow();
-    const nameCell = row.insertCell();
-    const lastnameCell = row.insertCell();
-    const emailCell = row.insertCell();
-    const passwordCell =row.insertCell();
-    const ageCell =row.insertCell();
-    const actionsCell = row.insertCell();
+      const row = studentTable.insertRow();
+      const nameCell = row.insertCell();
+      const lastnameCell = row.insertCell();
+      const emailCell = row.insertCell();
+      const passwordCell =row.insertCell();
+      const ageCell =row.insertCell();
+      const actionsCell = row.insertCell();
 
     nameCell.innerText = nameInput.value;
     lastnameCell.innerText = lastnameInput.value;
     emailCell.innerText = emailInput.value;
     passwordCell.innerText = password.value;
     ageCell.innerText = age.value;
-  }
+  
 
 
 
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete";
+  
 
 
     deleteBtn.addEventListener("click", () => {
       row.remove();
     });
-
-
     actionsCell.appendChild(deleteBtn);
-  }}
-
+  }}}
