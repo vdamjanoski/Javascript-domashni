@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript 7</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <h2>Students System</h2>
+    <div class="form-container">
+      <label for="nameInput">Name</label>
+      <input id="nameInput" type="text" />
+      <span id="nameInputError" class="error-msg"></span>
+      <label for="lastnameInput">Lastname</label>
+      <input id="lastnameInput" type="text" />
+      <span class="error-msg" id="emptyInput1"></span>
+      <label for="emailInput">Email</label>
+      <input id="emailInput" type="email" />
+      <span class="error-msg" id="emptyInput3"></span>
+      <span class="error-msg" id="emailVerification"></span>
+      <label for="password">Password</label>
+      <input id="password" type="password" />
+      <span class="error-msg" id="emptyInput2"></span>
+      <label for="age">Age</label>
+      <input id="age" type="number" min="1" />
+      <span id="ageIsAdult" class="error-msg"></span>
+
+
+      <button onclick="addStudent()">Add Student</button>
+    </div>
+
+    <table id="studentTable" border style="width: 100%">
+      <thead>
+        <th>Name</th>
+        <th>Lastname</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Age</th>
+        <th>Actions</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="script.js"></script>
+  </body>
+</html>
