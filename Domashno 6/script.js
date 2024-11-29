@@ -73,12 +73,17 @@ function isAdult(){
   }
 }
 function checkAll(){
+  if (!checkLastName() && !checkEmail() && !checkPassword()){
+    return false;
+  }else {
+    return (checkLastName() && checkEmail() && checkPassword());
+  }
   // if (checkLastName() && checkEmail() && checkPassword() ){
   //   return true;
   // }else{
   //   return false;
   // }
-  return (checkLastName() && checkEmail() && checkPassword());
+  
 }
 function addStudent() {
   
