@@ -19,12 +19,12 @@ fetchPhones().then((Phones) => {
           <p>${element.data.Capacity}</p>
         </div>`
       }
+      document.getElement
 
   });
 })
 var searchBtn = document.getElementById("search-button");
 var searchInput = document.getElementById("search-input");
-
 searchBtn.addEventListener("click", () => {
   console.log("clicked");
   })
