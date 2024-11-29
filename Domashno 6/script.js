@@ -72,9 +72,18 @@ function isAdult(){
     return true;
   }
 }
+function checkAll(){
+  // if (checkLastName() && checkEmail() && checkPassword() ){
+  //   return true;
+  // }else{
+  //   return false;
+  // }
+  return (checkLastName() && checkEmail() && checkPassword());
+}
 function addStudent() {
   
-  if (validateForm()  && checkLastName() && checkEmail( )  && checkPassword() && isAdult()) {
+  if (validateForm() && isAdult() && checkAll()) {
+    {
       const row = studentTable.insertRow();
       const nameCell = row.insertCell();
       const lastnameCell = row.insertCell();
@@ -102,4 +111,4 @@ function addStudent() {
       row.remove();
     });
     actionsCell.appendChild(deleteBtn);
-  }}
+  }}}
