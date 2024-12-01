@@ -85,6 +85,17 @@ function checkAll(){
   // }
   
 }
+const emailVerification=document.getElementById("emailVerification");
+function validateEmail(email) {
+  var re = /\S+@\S+\.\S+/;
+  if (re.test(email)==true){
+    emailVerification.innerText=""
+    return true;
+  }else{
+    emailVerification.innerText="This email doesnt exist"
+  return false;
+  }
+}
 function addStudent() {
   
   if (validateForm() && isAdult() && checkAll()) {
@@ -92,7 +103,7 @@ function addStudent() {
       const row = studentTable.insertRow();
       const nameCell = row.insertCell();
       const lastnameCell = row.insertCell();
-      const emailCell = row.insertCell();
+      const emailCell = row.insertCell();      validateEmail(emailCell.value)
       const passwordCell =row.insertCell();
       const ageCell =row.insertCell();
       const actionsCell = row.insertCell();
@@ -105,15 +116,13 @@ function addStudent() {
     
   
 
-
-
     const deleteBtn = document.createElement("button");
     deleteBtn.innerText = "Delete";
-  
 
 
     deleteBtn.addEventListener("click", () => {
       row.remove();
     });
     actionsCell.appendChild(deleteBtn);
-  }}}
+    
+  }} }
