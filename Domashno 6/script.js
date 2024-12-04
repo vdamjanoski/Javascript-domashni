@@ -87,11 +87,11 @@ function checkAll(){
 }
 const emailVerification=document.getElementById("emailVerification");
 function validateEmail(email) {
-  var re = /\S+@\S+\.\S+/;
-  if (re.test(email)==true){
+  var re = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (re.test(email)){
     emailVerification.innerText=""
     return true;
-  }else{
+  } else {
     emailVerification.innerText="This email doesnt exist"
   return false;
   }
@@ -103,7 +103,8 @@ function addStudent() {
       const row = studentTable.insertRow();
       const nameCell = row.insertCell();
       const lastnameCell = row.insertCell();
-      const emailCell = row.insertCell();      validateEmail(emailCell.value)
+      const emailCell = row.insertCell();      
+      validateEmail(emailCell.value)
       const passwordCell =row.insertCell();
       const ageCell =row.insertCell();
       const actionsCell = row.insertCell();
