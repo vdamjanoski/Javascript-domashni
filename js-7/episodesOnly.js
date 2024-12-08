@@ -17,17 +17,17 @@ function populateEpisodeOnly(episodeOnly) {
     const episodeDivContainer = document.getElementById("episodeDiv");{
     const episodeDivElement = document.createElement("div");
     episodeDivContainer.innerHTML += `
-      <div>
+    <div class="main-container">
+      <div class="image-container">
             <img src="${episodeOnly.image.medium}" />
         </div>
-        <div>
-            <div>
+            <div class="content">
                 <h3>${episodeOnly.name}</h3>
                 <span>${episodeOnly.airdate}</span>
                 <span>${episodeOnly.id}</span>
+                <span>${episodeOnly.summary}</span
             </div>
-            ${episodeOnly.summary}
-            <div>
+            <div class="rating-container">
                 <span> ${episodeOnly.rating.average}</span>
                 <button>Rate</button>
             </div>
