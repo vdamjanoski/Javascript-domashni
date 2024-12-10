@@ -8,17 +8,16 @@ class BankAccount {
       showDiv.innerHTML+=`<div class="bankCards">
             <div>Account number: ${accountNumber}</div>
             <div>Starting balance: $${balance}</div>
-            <label for="search"><input type="search" id="searchInput"></label>
-            <label for="button1"><button onclick="myBankAccount.deposit(searchInput.value)">Deposit</button></label>
-            <label for="button2"><button onclick="myBankAccount.withdraw(searchInput.value)">Withdraw</button></label>
-            <div class="balanceDiv" style="display: none;">Your balance is: $${balance}</div>
+            <label for="search"><input type="number" id="searchInput"></label>
+            <label for="button1"><button id="depositBtn">Deposit</button></label>
+            <label for="button2"><button id="withdrawBtn">Withdraw</button></label>
+            <div class="balanceDiv" style="display: none;">Your balance is: $${this.balance}</div>
             </div>`;
     }
   
-  
     deposit(amount) {
       this.balance += amount;
-      console.log(parseInt(this.balance))
+      console.log(this.balance)
     }
   
   
@@ -35,13 +34,27 @@ class BankAccount {
         );
       }
     }
+    
   
   
     displayBalance() {
       console.log(`Your balance is: $${this.balance}`);
     }
+    
   } 
   
-  const myBankAccount = new BankAccount("12371674", 500);
-  const yourBankAccount = new BankAccount("125234", 12312300);
+  const myBankAccount = new BankAccount("12371674", parseInt(500));
   
+  const depositBtn = document.getElementById("depositBtn");
+
+  depositBtn.addEventListener("click", () => {
+   myBankAccount.balance+=parseInt(searchInput.value);
+   showDiv.innerHTML+=`<div>$${(myBankAccount.balance)}</div>`;
+})
+
+const withdrawBtn = document.getElementById("withdrawBtn");
+
+  withdrawBtn.addEventListener("click", () => {
+    myBankAccount.balance-=searchInput.value;
+   showDiv.innerHTML+=`<div>$${(myBankAccount.balance)}</div>`;
+})
