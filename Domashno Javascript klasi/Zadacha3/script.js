@@ -49,12 +49,16 @@ class BankAccount {
 
   depositBtn.addEventListener("click", () => {
    myBankAccount.balance+=parseInt(searchInput.value);
-   showDiv.innerHTML+=`<div>$${(myBankAccount.balance)}</div>`;
+   showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
 })
 
 const withdrawBtn = document.getElementById("withdrawBtn");
 
   withdrawBtn.addEventListener("click", () => {
-    myBankAccount.balance-=searchInput.value;
-   showDiv.innerHTML+=`<div>$${(myBankAccount.balance)}</div>`;
+    if (myBankAccount.balance<searchInput.value){
+        showDiv.innerHTML+=`<div>Insufficient balance!</div>`;
+    }else{
+        myBankAccount.balance-=searchInput.value;
+        showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
+    }
 })
