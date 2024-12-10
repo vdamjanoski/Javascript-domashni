@@ -9,16 +9,16 @@ class BankAccount {
             <div>Account number: ${accountNumber}</div>
             <div>Starting balance: $${balance}</div>
             <label for="search"><input type="search" id="searchInput"></label>
-            <label for="button1"><button>Deposit</button></label>
-            <label for="button2"><button>Withdraw</button></label>
-            <div class="balanceDiv" style="display: none;">Your balance is: $${this.balance}</div>
+            <label for="button1"><button onclick="myBankAccount.deposit(searchInput.value)">Deposit</button></label>
+            <label for="button2"><button onclick="myBankAccount.withdraw(searchInput.value)">Withdraw</button></label>
+            <div class="balanceDiv" style="display: none;">Your balance is: $${balance}</div>
             </div>`;
     }
   
   
     deposit(amount) {
       this.balance += amount;
-      console.log(`Deposited: $${amount}`);
+      console.log(parseInt(this.balance))
     }
   
   
