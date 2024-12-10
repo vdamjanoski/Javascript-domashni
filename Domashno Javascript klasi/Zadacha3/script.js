@@ -9,34 +9,12 @@ class BankAccount {
             <div>Account number: ${accountNumber}</div>
             <div>Starting balance: $${balance}</div>
             <label for="search"><input type="number" id="searchInput"></label>
-            <label for="button1"><button id="depositBtn">Deposit</button></label>
-            <label for="button2"><button id="withdrawBtn">Withdraw</button></label>
+            <label for="button1"><button id="depositBtn" onclick="deposit()">Deposit</button></label>
+            <label for="button2"><button id="withdrawBtn" onclick="withdraw()">Withdraw</button></label>
+            <label for="transactions"><button id="transactionBtn" onclick="transactions()">Transactions</button></label>
             <div class="balanceDiv" style="display: none;">Your balance is: $${this.balance}</div>
             </div>`;
     }
-  
-    deposit(amount) {
-      this.balance += amount;
-      console.log(this.balance)
-    }
-  
-  
-    withdraw(amount) {
-      if (this.balance >= amount) {
-        this.balance -= amount;
-  
-  
-        console.log(`Successfully withdrawn $${amount}`);
-      } else {
-        console.log(`You want to withdraw $${amount}`);
-        console.log(
-          `But you have insufficient funds, your balance is: $${this.balance}`
-        );
-      }
-    }
-    
-  
-  
     displayBalance() {
       console.log(`Your balance is: $${this.balance}`);
     }
@@ -47,18 +25,34 @@ class BankAccount {
   
   const depositBtn = document.getElementById("depositBtn");
 
-  depositBtn.addEventListener("click", () => {
-   myBankAccount.balance+=parseInt(searchInput.value);
+// //   depositBtn.addEventListener("click", () => {
+// //    myBankAccount.balance+=parseInt(searchInput.value);
+// //    showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
+// })
+function deposit(){
+    myBankAccount.balance+=parseInt(searchInput.value);
    showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
-})
+}
 
 const withdrawBtn = document.getElementById("withdrawBtn");
 
-  withdrawBtn.addEventListener("click", () => {
+//   withdrawBtn.addEventListener("click", () => {
+
+//     if (myBankAccount.balance<searchInput.value){
+//         showDiv.innerHTML+=`<div>Insufficient balance!</div>`;
+//     }else{
+//         myBankAccount.balance-=searchInput.value;
+//         showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
+//     }
+// })
+function withdraw(){
     if (myBankAccount.balance<searchInput.value){
         showDiv.innerHTML+=`<div>Insufficient balance!</div>`;
     }else{
         myBankAccount.balance-=searchInput.value;
         showDiv.innerHTML+=`<div>Your new balance is $${(myBankAccount.balance)}!</div>`;
     }
-})
+}
+function transactions(){
+
+}
