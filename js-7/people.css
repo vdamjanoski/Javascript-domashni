@@ -1,0 +1,23 @@
+html{
+    margin-left: 30px;
+}
+a{
+    color: black;
+}
+.peopleHeadDiv{
+    display: flex;
+    flex-direction: column;
+}
+.peopleContainer{
+    gap: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.peopleInfo{
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 20px;
+}
