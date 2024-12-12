@@ -66,4 +66,13 @@
     display: flex;
     gap: 12px;
   }
-  
+  #crewButton{
+    padding: 25px 50px;
+    height: fit-content;
+    font-size: 16px;
+    border-radius: 25px;
+    background-color: #2b2b2b;
+    text-align: center;
+    box-shadow: 2px 2px 2px gray;
+    color: white;
+  }

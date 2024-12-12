@@ -14,7 +14,7 @@ getEpisodeOnly(id).then((episodeOnly) =>{
 
 
 function populateEpisodeOnly(episodeOnly) {
-    const episodeDivContainer = document.getElementById("episodeDiv");{
+    const episodeDivContainer = document.getElementById("episodeDiv");
     const episodeDivElement = document.createElement("div");
     episodeDivContainer.innerHTML += `
     <div class="main-container">
@@ -35,6 +35,6 @@ function populateEpisodeOnly(episodeOnly) {
       `;
       episodeDivContainer.appendChild(episodeDivElement);
 
-  };
+  ;
 
 }

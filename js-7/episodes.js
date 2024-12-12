@@ -51,13 +51,17 @@ function populateShow(show) {
             ${show.summary}
             <p>Premiered: ${show.premiered}</p>
             <p>Ended: ${show.ended}</p>
+            <a href="cast.html?id=${show.id}&name=${show.name}">View Cast</a>
        </div>
     `;
 
 
+    
+
+
   showContainer.appendChild(showDivElement);
 }
-
+const crewButton = document.getElementById("crewButton");
 const episodeContainer = document.getElementById("episodes");
 function populateEpisodes(episodes) {
 
@@ -82,44 +86,15 @@ function populateEpisodes(episodes) {
             </div>
         </div>
       `;
-
+      
       episodeDivElement.addEventListener("click", () => {
         window.location.href = `episodesOnly.html?id=${episode.id}`
+
     });
-
-      
-
 
     episodeContainer.appendChild(episodeDivElement);
   });
-}
-
-
-// episodeContainer.addEventListener("click", () => {
-//   console.log(`clicked`);
-// });
-
-// function populateEpisodeOnly(episodeOnly) {
-//   const episodeDivContainer = document.getElementById("episodeDiv");{
-//     const episodeDivElement = document.createElement("div");
-//     episodeDivContainer.innerHTML += `
-//       <div>
-//             <img src="${episodeOnly.image.medium}" />
-//         </div>
-//         <div>
-//             <div>
-//                 <h3>${episodeOnly.name}</h3>
-//                 <span>${episodeOnly.airdate}</span>
-//             </div>
-//             ${episodeOnly.summary}
-//             <div>
-//                 <span> ${episodeOnly.rating.average}</span>
-//                 <button>Rate</button>
-//             </div>
-//         </div>
-    
-//       `;
-//       episodeDivContainer.appendChild(episodeDivElement);
-//   };
-
-// }
+};
+crewButton.addEventListener("click", ()=>{
+  window.location.href =`cast.html?id=${show.id}&name=${show.name}`
+})

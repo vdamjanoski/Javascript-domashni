@@ -100,15 +100,15 @@ function addStudent() {
   
   if (validateForm() && isAdult() && checkAll()) {
     {
-      const row = studentTable.insertRow();
-      const nameCell = row.insertCell();
-      const lastnameCell = row.insertCell();
-      const emailCell = row.insertCell();      
-      validateEmail(emailCell.value)
-      const passwordCell =row.insertCell();
-      const ageCell =row.insertCell();
-      const actionsCell = row.insertCell();
-
+    const row = studentTable.insertRow();
+    const nameCell = row.insertCell();
+    const lastnameCell = row.insertCell();
+    const emailCell = row.insertCell();      
+    validateEmail(emailCell.value);
+    const passwordCell =row.insertCell();
+    const ageCell =row.insertCell();
+    const actionsCell = row.insertCell();
+    
     nameCell.innerText = nameInput.value;
     lastnameCell.innerText = lastnameInput.value;
     emailCell.innerText = emailInput.value;
