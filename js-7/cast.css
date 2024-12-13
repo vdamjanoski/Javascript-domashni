@@ -1,9 +1,40 @@
-.cast-item{
-    display: flex;
-    gap: 25px;
+html{
+    background-color: rgb(234, 245, 255);
 }
-.person,.character{
+#showTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.cast{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     padding: 10px;
     margin-bottom: 20px;
+    /* border: 1px solid gray; */
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#cast-container{
+    display: grid;
+    grid-template-columns: repeat(3, 2fr);
+    gap: 10px;
+}
+.person,.character{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+}
+.cast-persons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cast-a a{
+    color: black;
 }

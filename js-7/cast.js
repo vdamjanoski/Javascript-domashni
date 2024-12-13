@@ -11,6 +11,7 @@ async function getCastData(id) {
 document.getElementById("showTitle").innerHTML+=` ${showName}`
 
 
+
 getCastData(id).then((cast) => {
     populateCast(cast);
   });
@@ -21,21 +22,26 @@ getCastData(id).then((cast) => {
       const castDiv = document.createElement("div");
       castDiv.classList.add("cast-item");
   
-  
+      
       castDiv.innerHTML = `
+      <div class="cast">
+      <div class="cast-persons">
       <div class="person">
           <h3>${cast.person.name}</h3>
           <img src="${cast.person.image.medium}" alt=""> 
       </div>
-      <div class="character">
+        <div class="character">
           <h3>${cast.character.name}</h3>
           <img src="${cast.character.image.medium}" alt=""> 
+        </div>
       </div>
+      <div class="cast-a">
+      <a href=people.html?id=${cast.person.id}>Click for more personal info</a>
+      </div>
+      </div>
+
       `;
       castContainerDiv.appendChild(castDiv);
-      castDiv.addEventListener("click", ()=>{
-        window.location.href =`people.html?id=${cast.person.id}`
-      })
     });
   }
   

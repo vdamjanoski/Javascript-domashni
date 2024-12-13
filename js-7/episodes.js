@@ -77,7 +77,6 @@ function populateEpisodes(episodes) {
             <div class="episode-title-div">
                 <h3>${episode.name}</h3>
                 <span>${episode.airdate}</span>
-                <span>${episode.id}</span>
             </div>
             ${episode.summary}
             <div class="episode-rate">
