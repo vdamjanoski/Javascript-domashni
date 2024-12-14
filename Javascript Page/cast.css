@@ -6,7 +6,10 @@ html{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    padding: 40px;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: rgb(59, 59, 59);
 }
 .cast{
     display: flex;
