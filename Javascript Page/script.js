@@ -70,11 +70,6 @@ function populateShows(shows) {
         .map((genre) => `<span class="genre">${genre}</span>`)
         .join("")}
         </div>
-        <div class="links">
-          <a href="https://www.imdb.com/title/${
-            show.externals.imdb
-          }" target="_blank">Learn More</a>
-        </div>
       </div>`;
 
 

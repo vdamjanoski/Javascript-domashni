@@ -1,14 +1,20 @@
 html{
     margin-left: 30px;
+    color: white;
+    background-color: rgb(22, 21, 21);;
 }
 a{
-    color: black;
+    color: rgb(255, 255, 255);
 }
 .peopleHeadDiv{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .peopleContainer{
+    border: 1px solid white;
+    padding: 10px;
     gap: 15px;
     display: flex;
     justify-content: flex-start;
@@ -20,4 +26,12 @@ a{
     flex-direction: column;
     justify-content: flex-start;
     font-size: 20px;
+}
+#peopleCard h1{
+    background-color: rgb(59, 59, 59);;
+    padding: 10px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

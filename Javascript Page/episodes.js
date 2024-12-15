@@ -18,6 +18,7 @@ async function getEpisodesForShow(id) {
 
 
 getEpisodesForShow(id).then((episodes) => {
+  populateSeasonFilters(episodes);
   populateEpisodes(episodes);
 });
 
@@ -26,6 +27,52 @@ getShowData(id).then((show) => {
   populateShow(show);
 });
 
+var selectedIndex = 0;
+
+
+function populateSeasonFilters(episodes) {
+  const numberOfSeasons = episodes[episodes.length - 1].season;
+  console.log(numberOfSeasons);
+  const seasonsArray = Array(numberOfSeasons)
+    .fill()
+    .map((_, index) => index + 1);
+
+
+  const filterSeasonsContainer = document.getElementById("filter-seasons");
+
+
+  seasonsArray.forEach((season, index) => {
+    const seasonButton = document.createElement("div");
+    seasonButton.classList.add("season-btn");
+    seasonButton.innerHTML = `Season ${season}`;
+
+
+    seasonButton.addEventListener("click", () => {
+      const filteredEpisodes = episodes.filter(
+        (episode) => episode.season == season
+      );
+
+
+      seasonButton.classList.add("selected");
+      if (selectedIndex != index) {
+        allSeasonButtons[selectedIndex].classList.remove("selected");
+        selectedIndex = index;
+      }
+
+
+      populateEpisodes(filteredEpisodes);
+    });
+
+
+    filterSeasonsContainer.appendChild(seasonButton);
+  });
+
+
+  const allSeasonButtons = Array.from(
+    document.getElementsByClassName("season-btn")
+  );
+  console.log(allSeasonButtons);
+}
 
 
 

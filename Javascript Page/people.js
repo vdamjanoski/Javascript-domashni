@@ -19,13 +19,14 @@ getPeopleData(id).then((people) => {
 <div class="peopleContainer">
     <div class="peopleHeadDiv">
         <div class="imgPeople"><img src="${people.image.medium}" alt=""></div>
+        <a href="${people.url}" target="_blank">${people.name}'s more info</a>
     </div>
    <div class="peopleInfo">
    <p><b>Name</b>:  ${people.name}</p>
    <p><b>Country: </b>${people.country.name}/${people.country.code}</p>
    <p><b>Born at:</b> ${people.birthday}</p>
    <p><b>Gender: </b>${people.gender}</p>
-   <a href="${people.url}" target="_blank">${people.name}'s more info</a>
+   
    </div>
 </div>
         `

@@ -24,11 +24,10 @@ function populateEpisodeOnly(episodeOnly) {
             <div class="content">
                 <h3>${episodeOnly.name}</h3>
                 <span>${episodeOnly.airdate}</span>
-                <span>${episodeOnly.id}</span>
                 <span>${episodeOnly.summary}</span
             </div>
             <div class="rating-container">
-                <span> ${episodeOnly.rating.average}</span>
+                <span><i class="fa fa-star" style="color: gold"></i> ${episodeOnly.rating.average}</span>
                 <button>Rate</button>
             </div>
         </div>
