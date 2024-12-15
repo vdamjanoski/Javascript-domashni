@@ -101,14 +101,8 @@ function populateShow(show) {
             <a href="cast.html?id=${show.id}&name=${show.name}">View Cast</a>
        </div>
     `;
-
-
-    
-
-
   showContainer.appendChild(showDivElement);
 }
-const crewButton = document.getElementById("crewButton");
 const episodeContainer = document.getElementById("episodes");
 function populateEpisodes(episodes) {
 
@@ -141,6 +135,4 @@ function populateEpisodes(episodes) {
     episodeContainer.appendChild(episodeDivElement);
   });
 };
-crewButton.addEventListener("click", ()=>{
-  window.location.href =`cast.html?id=${show.id}&name=${show.name}`
-})
+
